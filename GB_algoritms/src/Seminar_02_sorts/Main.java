@@ -13,7 +13,7 @@ public class Main {
         int[] array;
         array = new int[num];
         for (int i = 0; i < num; i++) {
-            array[i] = rnd.nextInt(100);
+            array[i] = rnd.nextInt(1000);
         }
         return array;
     }
@@ -24,7 +24,7 @@ public class Main {
         int[] array = createArray(num);
         int[] array_tmp;
 
-        showArrya(array);
+//        showArrya(array);
         // Bubble Sort
         array_tmp = array.clone();
         Date startDate = new Date();
@@ -81,12 +81,26 @@ public class Main {
         long quickSortDuration = endDate.getTime() - startDate.getTime();
         System.out.printf("Quick duration: %d", quickSortDuration);
         System.out.println();
-        showArrya(array_tmp);
+//        showArrya(array_tmp);
         // End Quick Sort
+
+        //Heap sort
+        array_tmp = array.clone();
+//        showArrya(array_tmp);
+        startDate = new Date();
+        HeapSort.sort(array_tmp);
+        endDate = new Date();
+        long heapSortDuration = endDate.getTime() - startDate.getTime();
+        System.out.printf("Heap sort duration: %d", heapSortDuration);
+        System.out.println();
+//        showArrya(array_tmp);
+        // End Heap Sort
 //        showArrya(array);
 
-        int position = QuickSearch.search(array_tmp,25);
-        System.out.printf("Позиция искомого числа 25: %d",position);
+
+
+//        int position = QuickSearch.search(array_tmp,25);
+//        System.out.printf("Позиция искомого числа 25: %d",position);
 
     }
 
