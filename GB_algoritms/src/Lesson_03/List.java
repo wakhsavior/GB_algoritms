@@ -1,6 +1,6 @@
 package Lesson_03;
 
-public class List {
+public class List<E> {
     Node head;
     Node tail;
 
